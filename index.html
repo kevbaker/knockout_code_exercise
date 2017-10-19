@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" href="/favicon.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/style.css">
     <title>Knockout Code Exercise!</title>
 </head>
 
@@ -36,22 +37,22 @@
                         <th>Dec</th>
                         <th>Total</th>
                     </thead>
-                    <tbody  data-bind="foreach: records">
+                    <tbody data-bind="foreach: records">
                         <tr>
                             <td data-bind="text: $data.Year">Year</td>
-                            <td data-bind="text: $data.Month">Jan</td>
-                            <td data-bind="text: $data.Value">Feb</td>
-                            <td>Mar</td>
-                            <td>Apr</td>
-                            <td>May</td>
-                            <td>Jun</td>
-                            <td>Jul</td>
-                            <td>Aug</td>
-                            <td>Sep</td>
-                            <td>Oct</td>
-                            <td>Nov</td>
-                            <td>Dec</td>
-                            <td>Total</td>
+                            <td data-bind="text: $data[1]">Jan</td>
+                            <td data-bind="text: $data[2]">Feb</td>
+                            <td data-bind="text: $data[3]">Mar</td>
+                            <td data-bind="text: $data[4]">Apr</td>
+                            <td data-bind="text: $data[5]">May</td>
+                            <td data-bind="text: $data[6]">Jun</td>
+                            <td data-bind="text: $data[7]">Jul</td>
+                            <td data-bind="text: $data[8]">Aug</td>
+                            <td data-bind="text: $data[9]">Sep</td>
+                            <td data-bind="text: $data[10]">Oct</td>
+                            <td data-bind="text: $data[11]">Nov</td>
+                            <td data-bind="text: $data[12]">Dec</td>
+                            <td data-bind="text: $data.Total">Total</td>
                         </tr>
                     </tbody>
             </div>
@@ -87,6 +88,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js " integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1 "
         crossorigin="anonymous "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js "></script>
+    <script src="js/data_service.js"></script>
+    <script src="js/main_view_model.js"></script>
     <script src="js/main.js "></script>
 </body>
 
