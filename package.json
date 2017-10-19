@@ -1,0 +1,15 @@
+{
+  "name": "knockout-code-exercise",
+  "version": "1.0.0",
+  "description": "knockout code exercise for Now Intelligence",
+  "main": "index.js",
+  "scripts": {
+    "start": "reload -p 3000 -b ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "reload": "^2.2.2"
+  }
+}

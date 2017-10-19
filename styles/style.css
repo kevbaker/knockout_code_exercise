@@ -1,0 +1,9 @@
+table {
+    table-layout:fixed;
+}
+table td {
+  width: 50px;
+}
+.textBox {
+  width: 30px;
+}
