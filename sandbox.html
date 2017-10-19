@@ -28,9 +28,23 @@
             <input type="text" name="" id="" placeholder="add to list" data-bind="value: newListItem">
             <button type="submit" class="btn btn-outline-primary btn-sm" data-bind="click: addListItem">Add Item</button>
         </div>
+        <div class="p-3">
+            <input type="text" name="" placeholder="name" data-bind="value: newBigListItemName">
+            <input type="text" name="" placeholder="type" data-bind="value: newBigListItemType">
+            <button type="submit" class="btn btn-outline-primary btn-sm" data-bind="click: addBigListItem">Add Big Item</button>
+        </div>
 
+        <h3>List</h3>
         <ul class="list-group p-3" data-bind="foreach: list">
             <li class="list-group-item" data-bind="text: $data"></li>
+        </ul>
+
+        <h3>Big List</h3>
+        <table class="table p-3" data-bind="foreach: bigList">
+            <tr>
+                <td class="" data-bind="text: $data.name"></td>
+                <td class="" data-bind="text: $data.type"></td>
+            </tr>
         </ul>
 
     </div>
