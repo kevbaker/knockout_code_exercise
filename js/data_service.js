@@ -31,21 +31,33 @@ class DataService {
         { Year: 2014, Month: 1, Value: 0.85 }
       ];
     }
+
+    /**
+     * Get the data sorted by Year with month objects
+     * @return {array} sorted data by year
+     */
     getDataByYear() {
       let data = this.getData();
       let sortedData = [];
   
       data.forEach(
         function(item) {
-          sortedData = this.createYear(sortedData, item);
-          let dataYear = this.findYear(sortedData, item);
+          sortedData = this._createYear(sortedData, item);
+          let dataYear = this._findYear(sortedData, item);
           dataYear[item.Month] = item.Value;
-          this.updateTotal(dataYear, item);
+          this._updateTotal(dataYear, item);
         }.bind(this)
       );
       return sortedData;
     }
-    findYear(sortedData, item) {
+
+    /**
+     * Find the Year object from the given sortedData 
+     * @param {array} sortedData 
+     * @param {object} item - item used to match year
+     * @return {object} found year item
+     */
+    _findYear(sortedData, item) {
       let foundItem = {};
       sortedData.forEach(function(dataItem) {
         if (dataItem.Year == item.Year) {
@@ -54,7 +66,13 @@ class DataService {
       });
       return foundItem;
     }
-    createYear(sortedData, item) {
+
+    /**
+     * Create a Year object for the given item in the sortedData
+     * @param {array} sortedData 
+     * @param {object} item 
+     */
+    _createYear(sortedData, item) {
       let found = false;
       sortedData.forEach(function(dataItem) {
         if (dataItem.Year == item.Year) {
@@ -82,12 +100,25 @@ class DataService {
       }
       return sortedData;
     }
-    updateTotal(item, value) {
-      item.Total += value.Value;
+    /**
+     * Update total for the given year item
+     * @param {object} yearItem - year object for setting Total
+     * @param {object} item - item object to get value to add to year
+     */
+    _updateTotal(yearItem, item) {
+      yearItem.Total += item.Value;
     }
+    /**
+     * Add an item to the data
+     * @param {object} item 
+     */
     addItem(item) {
       this.data.push(item);
     }
+    /**
+     * Get the data
+     * @return {array} data
+     */
     getData() {
       return this.data;
     }
