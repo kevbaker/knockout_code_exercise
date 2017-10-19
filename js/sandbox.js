@@ -1,33 +1,44 @@
-var vm = {
-  heading: ko.observable(),
-  store: ko.observable(),
-  newListItem: ko.observable(),
-  newBigListItemName: ko.observable(),
-  newBigListItemType: ko.observable(),
-  list: ko.observableArray(),
-  bigList: ko.observableArray(),
-  addListItem: function() {
+
+class SandboxViewModel {
+  constructor(data) {
+    // define properties
+    this.heading = ko.observable();
+    this.store = ko.observable();
+    this.newListItem = ko.observable();
+    this.newBigListItemName = ko.observable();
+    this.newBigListItemType = ko.observable();
+    this.list = ko.observableArray();
+    this.bigList = ko.observableArray();    
+
+    // initialize UI
+    this.populateList();
+    this.populateBigList();
+    this.populateHeadings();
+  }
+  populateHeadings() {
+    this.heading("Ninja Heading");
+    this.store("Ninja Store");
+  }
+  populateList() {
+    this.list.push("one");
+    this.list.push("two");
+    this.list.push("three");
+  }
+  populateBigList() {
+    this.bigList.push({"name": "Kevin", "type":"human"});
+    this.bigList.push({"name": "Robin", "type":"human"});
+    this.bigList.push({"name": "Penny", "type":"baby"});
+  }
+  addListItem() {
     this.list.push(this.newListItem());
     this.newListItem("");
-  },
-  addBigListItem: function() {
-    let item = {
-        name: this.newBigListItemName(),
-        type: this.newBigListItemType()
-    };
-    this.bigList.push(item);
   }
-};
-vm.heading("Ninja Heading");
-vm.store("Ninja Store");
-
-
-vm.list.push("one");
-vm.list.push("two");
-vm.list.push("three");
-
-vm.bigList.push({"name": "Kevin", "type":"human"});
-vm.bigList.push({"name": "Robin", "type":"human"});
-vm.bigList.push({"name": "Penny", "type":"baby"});
-
-ko.applyBindings(vm);
+  addBigListItem() {
+    let item = {
+      name: this.newBigListItemName(),
+      type: this.newBigListItemType()
+  };
+  this.bigList.push(item);
+  }
+}
+ko.applyBindings(new SandboxViewModel());
