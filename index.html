@@ -16,47 +16,61 @@
     <div class="container">
 
         <!-- TODO: fill in with UI -->
-        <br />
-        <h4>UI Table of Data</h4>
+        <div class="p-3">
+            <h4>UI Table of Data</h4>
+            <div id="sortedDataTable">
+                <table class='table'>
+                    <thead>
+                        <th>Year</th>
+                        <th>Jan</th>
+                        <th>Feb</th>
+                        <th>Mar</th>
+                        <th>Apr</th>
+                        <th>May</th>
+                        <th>Jun</th>
+                        <th>Jul</th>
+                        <th>Aug</th>
+                        <th>Sep</th>
+                        <th>Oct</th>
+                        <th>Nov</th>
+                        <th>Dec</th>
+                        <th>Total</th>
+                    </thead>
+                    <tbody  data-bind="foreach: records">
+                        <tr>
+                            <td data-bind="text: $data.Year">Year</td>
+                            <td data-bind="text: $data.Month">Jan</td>
+                            <td data-bind="text: $data.Value">Feb</td>
+                            <td>Mar</td>
+                            <td>Apr</td>
+                            <td>May</td>
+                            <td>Jun</td>
+                            <td>Jul</td>
+                            <td>Aug</td>
+                            <td>Sep</td>
+                            <td>Oct</td>
+                            <td>Nov</td>
+                            <td>Dec</td>
+                            <td>Total</td>
+                        </tr>
+                    </tbody>
+            </div>
 
-        <div id="updateDataTable">
-            <table class='table'>
-                <tr>
-                    <th>Year</th>
-                    <th>Jan</th>
-                    <th>Feb</th>
-                    <th>Mar</th>
-                    <th>Apr</th>
-                    <th>May</th>
-                    <th>Jun</th>
-                    <th>Jul</th>
-                    <th>Aug</th>
-                    <th>Sep</th>
-                    <th>Oct</th>
-                    <th>Nov</th>
-                    <th>Dec</th>
-                    <th>Total</th>
-                </tr>
+            <input type="button " class="btn btn-outline-primary " value="Save Changes " onClick="saveChanges(); " />
+            <input class="hidden-xs hidden-sm hidden-md hidden-ls " id="yearsPresent " />
+
         </div>
-
-
-        <div id="dataTable">
-
-        </div>
-
-        <input type="button " class="btn btn-outline-primary " value="Save Changes " onClick="saveChanges(); " />
-        <input class="hidden-xs hidden-sm hidden-md hidden-ls " id="yearsPresent " />
 
         <!-- TODO: fill in with save data, to display what will be sent back -->
 
         <br />
         <br />
-<!-- 
+        <!-- 
         <h4>Array of Saved Data</h4>
         <div id="savedData ">
 
         </div> -->
-<!-- 
+        <!-- 
         <h4>Server Data!</h4>
         <div data-bind="foreach: $data.serverData ">
             <div data-bind="text: ko.toJSON($data) "></div>
