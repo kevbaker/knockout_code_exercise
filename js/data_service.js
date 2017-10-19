@@ -40,6 +40,7 @@ class DataService {
           sortedData = this.createYear(sortedData, item);
           let dataYear = this.findYear(sortedData, item);
           dataYear[item.Month] = item.Value;
+          this.updateTotal(dataYear, item);
         }.bind(this)
       );
       return sortedData;
@@ -80,6 +81,9 @@ class DataService {
         sortedData.push(newYear);
       }
       return sortedData;
+    }
+    updateTotal(item, value) {
+      item.Total += value.Value;
     }
     addItem(item) {
       this.data.push(item);
