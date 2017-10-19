@@ -24,6 +24,11 @@
             <input type="text" data-bind="value: store">
         </div>
 
+        <div class="p-3">
+            <input type="text" name="" id="" placeholder="add to list" data-bind="value: newListItem">
+            <button type="submit" class="btn btn-outline-primary btn-sm" data-bind="click: addListItem">Add Item</button>
+        </div>
+
         <ul class="list-group p-3" data-bind="foreach: list">
             <li class="list-group-item" data-bind="text: $data"></li>
         </ul>
