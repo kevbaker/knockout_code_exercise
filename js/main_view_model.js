@@ -7,7 +7,7 @@ class MainViewModel {
       this.records = ko.observableArray();
       this.data = ko.observableArray();
       this.newYear = ko.observable((new Date()).getFullYear());
-      this.newValue = ko.observable(0.25);
+      this.newValue = ko.observable(0.8);
       this.newMonth = ko.observable(1);
 
       // services
