@@ -49,7 +49,7 @@
                         <tr class="data-row">
                             <td data-bind="text: $data.Year">Year</td>
                             <td>
-                                <input type="text" data-bind="value: $data[1].toFixed(2), event: {change: $parent.changeItem.bind(mv)}">
+                                    <input type="text" data-bind="value: $data[1].toFixed(2), event: {change: $parent.changeItem.bind(mv, $data.Year, 1)}">
                             </td>
                             <td>
                                 <input type="text" data-bind="value: $data[2].toFixed(2), event: {change: $parent.changeItem.bind(mv, $data.Year, 2)}">

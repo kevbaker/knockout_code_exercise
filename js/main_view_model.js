@@ -44,7 +44,17 @@ class MainViewModel {
       return found;
     }
     changeItem(year, month, data, e) {
-
+      console.log("event:", e);
+      let value = e.target.value;
+      let item = {
+        Year: year,
+        Month: month,
+        Value: parseFloat(value)
+      };
+      this.dataSevice.removeItem(item);
+      this.dataSevice.addItem(item);
+      this.data(this.dataSevice.data);
+      this.updateRecords();
     }
     addItem() {
       let item = {
@@ -52,7 +62,7 @@ class MainViewModel {
         Month: this._getMonthValue(this.newMonth()),
         Value: parseFloat(this.newValue())
       };
-      this.dataSevice.removeItem(item)
+      this.dataSevice.removeItem(item);
       this.dataSevice.addItem(item);
       this.data(this.dataSevice.data);
       this.updateRecords();
