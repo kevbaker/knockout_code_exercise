@@ -49,40 +49,40 @@
                         <tr class="data-row">
                             <td data-bind="text: $data.Year">Year</td>
                             <td>
-                                <input type="text" data-bind="value: $data[1].toFixed(2)">
+                                <input type="text" data-bind="value: $data[1].toFixed(2), event: {change: $parent.changeItem.bind(mv)}">
                             </td>
                             <td>
-                                <input type="text" data-bind="value: $data[2].toFixed(2)">
+                                <input type="text" data-bind="value: $data[2].toFixed(2), event: {change: $parent.changeItem.bind(mv, $data.Year, 2)}">
                             </td>
                             <td>
-                                <input type="text" data-bind="value: $data[3].toFixed(2)">
+                                <input type="text" data-bind="value: $data[3].toFixed(2), event: {change: $parent.changeItem.bind(mv, $data.Year, 3)}">
                             </td>
                             <td>
-                                <input type="text" data-bind="value: $data[4].toFixed(2)">
+                                <input type="text" data-bind="value: $data[4].toFixed(2), event: {change: $parent.changeItem.bind(mv, $data.Year, 4)}">
                             </td>
                             <td>
-                                <input type="text" data-bind="value: $data[5].toFixed(2)">
+                                <input type="text" data-bind="value: $data[5].toFixed(2), event: {change: $parent.changeItem.bind(mv, $data.Year, 5)}">
                             </td>
                             <td>
-                                <input type="text" data-bind="value: $data[6].toFixed(2)">
+                                <input type="text" data-bind="value: $data[6].toFixed(2), event: {change: $parent.changeItem.bind(mv, $data.Year, 6)}">
                             </td>
                             <td>
-                                <input type="text" data-bind="value: $data[7].toFixed(2)">
+                                <input type="text" data-bind="value: $data[7].toFixed(2), event: {change: $parent.changeItem.bind(mv, $data.Year, 7)}">
                             </td>
                             <td>
-                                <input type="text" data-bind="value: $data[8].toFixed(2)">
+                                <input type="text" data-bind="value: $data[8].toFixed(2), event: {change: $parent.changeItem.bind(mv, $data.Year, 8)}">
                             </td>
                             <td>
-                                <input type="text" data-bind="value: $data[9].toFixed(2)">
+                                <input type="text" data-bind="value: $data[9].toFixed(2), event: {change: $parent.changeItem.bind(mv, $data.Year, 9)}">
                             </td>
                             <td>
-                                <input type="text" data-bind="value: $data[10].toFixed(2)">
+                                <input type="text" data-bind="value: $data[10].toFixed(2), event: {change: $parent.changeItem.bind(mv, $data.Year, 10)}">
                             </td>
                             <td>
-                                <input type="text" data-bind="value: $data[11].toFixed(2)">
+                                <input type="text" data-bind="value: $data[11].toFixed(2), event: {change: $parent.changeItem.bind(mv, $data.Year, 11)}">
                             </td>
                             <td>
-                                <input type="text" data-bind="value: $data[12].toFixed(2)">
+                                <input type="text" data-bind="value: $data[12].toFixed(2), event: {change: $parent.changeItem.bind(mv, $data.Year, 12)}">
                             </td>
                             <td data-bind="text: $data.Total.toFixed(2)">Total</td>
                         </tr>

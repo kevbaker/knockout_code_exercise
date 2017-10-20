@@ -28,7 +28,8 @@ class MainViewModel {
       this.updateData();
     }
     updateData() {
-      this.data(this.dataSevice.getData());
+      let newData = this.dataSevice.getData();
+      this.data(newData);
     }
     updateRecords() {
       this.records(this.dataSevice.getDataByYear());
@@ -42,14 +43,18 @@ class MainViewModel {
       });
       return found;
     }
+    changeItem(year, month, data, e) {
+
+    }
     addItem() {
       let item = {
         Year: this.newYear(),
         Month: this._getMonthValue(this.newMonth()),
         Value: parseFloat(this.newValue())
       };
+      this.dataSevice.removeItem(item)
       this.dataSevice.addItem(item);
-      this.updateData();
+      this.data(this.dataSevice.data);
       this.updateRecords();
     }
   }

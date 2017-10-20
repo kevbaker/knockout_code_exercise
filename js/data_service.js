@@ -16,7 +16,6 @@ class DataService {
       { Year: 2012, Month: 10, Value: 0.5 },
       { Year: 2012, Month: 11, Value: 0.75 },
       { Year: 2012, Month: 12, Value: 0.75 },
-
       { Year: 2013, Month: 1, Value: 0.5 },
       { Year: 2013, Month: 2, Value: 0.5 },
       { Year: 2013, Month: 3, Value: 0.75 },
@@ -51,7 +50,19 @@ class DataService {
     );
     return sortedData;
   }
-
+  removeItem(item) {
+    console.log("removeItem! item:", item);
+    let deleteIndex = -1;
+    this.data.forEach(function(d, i){
+      if ((d.Year == item.Year) && (d.Month == item.Month)) {
+        deleteIndex = i;
+      }
+    });
+    if (deleteIndex > -1) {
+      this.data.splice(deleteIndex, 1);
+    }
+    console.log("removeItem after: ",this.data);
+  }
   /**
      * Find the Year object from the given sortedData 
      * @param {array} sortedData 
