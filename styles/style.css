@@ -1,3 +1,12 @@
 .data-row td input {
     width: 50px;
 }
+
+i.material-icons  {
+    vertical-align: top;
+    color: slategray;
+}
+button i.material-icons {
+    color: white;
+    margin-right: 4px;
+}
