@@ -16,13 +16,13 @@
     <div class="container">
 
         <section id="hero">
-                <div class="jumbotron">
-                    <h1 class="display-3">Knockout Code Exercise</h1>
-                    <p class="lead">
-                        This is a zippy version of the Knockout Code Exercise.
-                    </p>
-                    <hr class="my-4">
-                </div>
+            <div class="jumbotron">
+                <h1 class="display-3">Knockout Code Exercise</h1>
+                <p class="lead">
+                    This is a zippy version of the Knockout Code Exercise.
+                </p>
+                <hr class="my-4">
+            </div>
         </section>
 
         <section id="data-by-year-display" class="p-3">
@@ -46,20 +46,44 @@
                         <th>Total</th>
                     </thead>
                     <tbody data-bind="foreach: records">
-                        <tr>
+                        <tr class="data-row">
                             <td data-bind="text: $data.Year">Year</td>
-                            <td data-bind="text: $data[1].toFixed(2)">Jan</td>
-                            <td data-bind="text: $data[2].toFixed(2)">Feb</td>
-                            <td data-bind="text: $data[3].toFixed(2)">Mar</td>
-                            <td data-bind="text: $data[4].toFixed(2)">Apr</td>
-                            <td data-bind="text: $data[5].toFixed(2)">May</td>
-                            <td data-bind="text: $data[6].toFixed(2)">Jun</td>
-                            <td data-bind="text: $data[7].toFixed(2)">Jul</td>
-                            <td data-bind="text: $data[8].toFixed(2)">Aug</td>
-                            <td data-bind="text: $data[9].toFixed(2)">Sep</td>
-                            <td data-bind="text: $data[10].toFixed(2)">Oct</td>
-                            <td data-bind="text: $data[11].toFixed(2)">Nov</td>
-                            <td data-bind="text: $data[12].toFixed(2)">Dec</td>
+                            <td>
+                                <input type="text" data-bind="value: $data[1].toFixed(2)">
+                            </td>
+                            <td>
+                                <input type="text" data-bind="value: $data[2].toFixed(2)">
+                            </td>
+                            <td>
+                                <input type="text" data-bind="value: $data[3].toFixed(2)">
+                            </td>
+                            <td>
+                                <input type="text" data-bind="value: $data[4].toFixed(2)">
+                            </td>
+                            <td>
+                                <input type="text" data-bind="value: $data[5].toFixed(2)">
+                            </td>
+                            <td>
+                                <input type="text" data-bind="value: $data[6].toFixed(2)">
+                            </td>
+                            <td>
+                                <input type="text" data-bind="value: $data[7].toFixed(2)">
+                            </td>
+                            <td>
+                                <input type="text" data-bind="value: $data[8].toFixed(2)">
+                            </td>
+                            <td>
+                                <input type="text" data-bind="value: $data[9].toFixed(2)">
+                            </td>
+                            <td>
+                                <input type="text" data-bind="value: $data[10].toFixed(2)">
+                            </td>
+                            <td>
+                                <input type="text" data-bind="value: $data[11].toFixed(2)">
+                            </td>
+                            <td>
+                                <input type="text" data-bind="value: $data[12].toFixed(2)">
+                            </td>
                             <td data-bind="text: $data.Total.toFixed(2)">Total</td>
                         </tr>
                     </tbody>
