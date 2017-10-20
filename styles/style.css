@@ -2,6 +2,9 @@
     width: 50px;
 }
 
+td.delete i.material-icons:hover {
+    color: red;
+}
 i.material-icons  {
     vertical-align: top;
     color: slategray;

@@ -78,6 +78,13 @@ class MainViewModel {
       this.updateItem(item);
     }
 
+    removeItem(item,e) {
+      console.log("removeItem! item:", item);
+      console.log("removeItem! e:", e);
+      this.dataSevice.removeItem(item);
+      this.refresh();
+    }
+
     /**
      * Refresh the data used in the displa
      */
