@@ -26,7 +26,10 @@
         </section>
 
         <section id="data-by-year-display" class="p-3">
-            <h4>Data Display By Year</h4>
+            <h4 class="mb-4">
+                Data Display By Year
+                <button class="btn btn btn-outline-primary btn-sm float-right" data-bind="event:{click: refresh}">refresh</button>
+            </h4>
             <div id="sortedDataTable">
                 <table class="table table-striped">
                     <thead>
@@ -49,40 +52,40 @@
                         <tr class="data-row">
                             <td data-bind="text: $data.Year">Year</td>
                             <td>
-                                    <input type="text" data-bind="value: $data[1].toFixed(2), event: {change: $parent.changeItem.bind(mv, $data.Year, 1)}">
+                                <input type="text" data-bind="value: $data[1].toFixed(2), event: {change: $parent.onChangeItem.bind(mv, $data.Year, 1)}">
                             </td>
                             <td>
-                                <input type="text" data-bind="value: $data[2].toFixed(2), event: {change: $parent.changeItem.bind(mv, $data.Year, 2)}">
+                                <input type="text" data-bind="value: $data[2].toFixed(2), event: {change: $parent.onChangeItem.bind(mv, $data.Year, 2)}">
                             </td>
                             <td>
-                                <input type="text" data-bind="value: $data[3].toFixed(2), event: {change: $parent.changeItem.bind(mv, $data.Year, 3)}">
+                                <input type="text" data-bind="value: $data[3].toFixed(2), event: {change: $parent.onChangeItem.bind(mv, $data.Year, 3)}">
                             </td>
                             <td>
-                                <input type="text" data-bind="value: $data[4].toFixed(2), event: {change: $parent.changeItem.bind(mv, $data.Year, 4)}">
+                                <input type="text" data-bind="value: $data[4].toFixed(2), event: {change: $parent.onChangeItem.bind(mv, $data.Year, 4)}">
                             </td>
                             <td>
-                                <input type="text" data-bind="value: $data[5].toFixed(2), event: {change: $parent.changeItem.bind(mv, $data.Year, 5)}">
+                                <input type="text" data-bind="value: $data[5].toFixed(2), event: {change: $parent.onChangeItem.bind(mv, $data.Year, 5)}">
                             </td>
                             <td>
-                                <input type="text" data-bind="value: $data[6].toFixed(2), event: {change: $parent.changeItem.bind(mv, $data.Year, 6)}">
+                                <input type="text" data-bind="value: $data[6].toFixed(2), event: {change: $parent.onChangeItem.bind(mv, $data.Year, 6)}">
                             </td>
                             <td>
-                                <input type="text" data-bind="value: $data[7].toFixed(2), event: {change: $parent.changeItem.bind(mv, $data.Year, 7)}">
+                                <input type="text" data-bind="value: $data[7].toFixed(2), event: {change: $parent.onChangeItem.bind(mv, $data.Year, 7)}">
                             </td>
                             <td>
-                                <input type="text" data-bind="value: $data[8].toFixed(2), event: {change: $parent.changeItem.bind(mv, $data.Year, 8)}">
+                                <input type="text" data-bind="value: $data[8].toFixed(2), event: {change: $parent.onChangeItem.bind(mv, $data.Year, 8)}">
                             </td>
                             <td>
-                                <input type="text" data-bind="value: $data[9].toFixed(2), event: {change: $parent.changeItem.bind(mv, $data.Year, 9)}">
+                                <input type="text" data-bind="value: $data[9].toFixed(2), event: {change: $parent.onChangeItem.bind(mv, $data.Year, 9)}">
                             </td>
                             <td>
-                                <input type="text" data-bind="value: $data[10].toFixed(2), event: {change: $parent.changeItem.bind(mv, $data.Year, 10)}">
+                                <input type="text" data-bind="value: $data[10].toFixed(2), event: {change: $parent.onChangeItem.bind(mv, $data.Year, 10)}">
                             </td>
                             <td>
-                                <input type="text" data-bind="value: $data[11].toFixed(2), event: {change: $parent.changeItem.bind(mv, $data.Year, 11)}">
+                                <input type="text" data-bind="value: $data[11].toFixed(2), event: {change: $parent.onChangeItem.bind(mv, $data.Year, 11)}">
                             </td>
                             <td>
-                                <input type="text" data-bind="value: $data[12].toFixed(2), event: {change: $parent.changeItem.bind(mv, $data.Year, 12)}">
+                                <input type="text" data-bind="value: $data[12].toFixed(2), event: {change: $parent.onChangeItem.bind(mv, $data.Year, 12)}">
                             </td>
                             <td data-bind="text: $data.Total.toFixed(2)">Total</td>
                         </tr>
@@ -104,7 +107,7 @@
                 <input type="text" id="value-input" class="form-control m-1" placeholder="Add item value..." data-bind="value: newValue">
 
                 <span class="input-group-btn m-1">
-                    <button class="btn btn-primary" type="button" data-bind="click: addItem">Add Item</button>
+                    <button class="btn btn-primary" type="button" data-bind="click: onAddItem">Add Item</button>
                 </span>
             </div>
 

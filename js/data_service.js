@@ -33,6 +33,14 @@ class DataService {
   }
 
   /**
+       * Get the data
+       * @return {array} data
+       */
+  getData() {
+    return this.data;
+  }
+
+  /**
      * Get the data sorted by Year with month objects
      * @return {array} sorted data by year
      */
@@ -50,19 +58,32 @@ class DataService {
     );
     return sortedData;
   }
+
+  /**
+     * Add an item to the data
+     * @param {object} item 
+     */
+  addItem(item) {
+    this.data.push(item);
+    this._sortDataByDate();
+  }
+
+  /**
+     * Remove object from data
+     * @param {object} item 
+     */
   removeItem(item) {
-    console.log("removeItem! item:", item);
     let deleteIndex = -1;
-    this.data.forEach(function(d, i){
-      if ((d.Year == item.Year) && (d.Month == item.Month)) {
+    this.data.forEach(function(d, i) {
+      if (d.Year == item.Year && d.Month == item.Month) {
         deleteIndex = i;
       }
     });
     if (deleteIndex > -1) {
       this.data.splice(deleteIndex, 1);
     }
-    console.log("removeItem after: ",this.data);
   }
+
   /**
      * Find the Year object from the given sortedData 
      * @param {array} sortedData 
@@ -112,6 +133,7 @@ class DataService {
     }
     return sortedData;
   }
+
   /**
      * Update total for the given year item
      * @param {object} yearItem - year object for setting Total
@@ -120,26 +142,15 @@ class DataService {
   _updateTotal(yearItem, item) {
     yearItem.Total += item.Value;
   }
+
   /**
-     * Add an item to the data
-     * @param {object} item 
-     */
-  addItem(item) {
-    this.data.push(item);
-    this.sortDataByDate();
-  }
-  sortDataByDate() {
+   * Sort Data by Date
+   */
+  _sortDataByDate() {
     this.data.sort(function(a, b) {
       let aa = a.Year * 12 + a.Month;
       let bb = b.Year * 12 + b.Month;
       return aa - bb;
     });
-  }
-  /**
-     * Get the data
-     * @return {array} data
-     */
-  getData() {
-    return this.data;
   }
 }
