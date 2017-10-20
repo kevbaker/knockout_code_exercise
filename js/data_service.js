@@ -3,6 +3,7 @@
  */
 class DataService {
   constructor() {
+    // from original "serverData"
     this.data = [
       { Year: 2012, Month: 1, Value: 0.5 },
       { Year: 2012, Month: 2, Value: 0.5 },

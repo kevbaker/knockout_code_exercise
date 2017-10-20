@@ -91,6 +91,8 @@ class MainViewModel {
     refresh() {
       this.updateData();
       this.updateRecords();
+      console.log("serverData:", this.data());
+      console.log("serverData.toJSON", JSON.stringify(this.data()));
     }
 
     /**
